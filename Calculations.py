@@ -1,7 +1,9 @@
 import pandas as pd
 from geopy.distance import great_circle
 
-df = pd.read_csv(r'C:\Users\Nick\OneDrive\Desktop\Education\Other Education\Data Analytics\Amstadam Airbnb\filtered_listings.csv')
+#Creating a Pandas dataframe with a CSV file:
+df = pd.read_csv(r'_Sensitive_')
+
 
 
 #Average Price by distance from the City Center:
@@ -33,13 +35,14 @@ print(f"Number of listings for Private room under €100: {num_of_private_rooms}
 
 
 
-
 #Average number of reviews per month for apartments vs private rooms
 avg_reviews_entire_home = df[df['room_type'] == 'Entire home/apt']['reviews_per_month'].mean()
 avg_reviews_private_room = df[df['room_type'] == 'Private room']['reviews_per_month'].mean()
 
 print(f"Average Number of Reviews per Month for Entire home/apt: {avg_reviews_entire_home:.2f}")
 print(f"Average Number of Reviews per Month for Private room: {avg_reviews_private_room:.2f}")
+
+
 
 #Three closest listings to the city center:
 closest_listings = df.nsmallest(3, 'distance')
