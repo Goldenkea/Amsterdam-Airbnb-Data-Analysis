@@ -1,7 +1,7 @@
 import pandas as pd
 import folium 
 
-df = pd.read_csv(r'C:\Users\Nick\OneDrive\Desktop\Education\Other Education\Data Analytics\Amstadam Airbnb\filtered_listings.csv')
+df = pd.read_csv(r'__Retrieve_File_From_Path__')
 
 df_filtered = df[df['price'] < 100]
 
@@ -37,4 +37,4 @@ for _, row in df_filtered.iterrows():
         popup=f"{row['name']}: €{row['price']}/night"
     ).add_to(m)
 # Save the map to an HTML file``
-m.save(r'C:\Users\Nick\OneDrive\Desktop\Education\Other Education\Data Analytics\Amstadam Airbnb\amsterdam_map.html')
+m.save(r'__Save_File_To_Path__')
